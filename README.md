@@ -4,8 +4,12 @@
 - Create React App
 - Install tailwindCSS
 - Build the Header
+- Routing of App
 - Build Login Form
 - Create Sign Up Form
+- Form Validation
+- useRef Hook
+- Firebase Configuration
 
 
 ...
