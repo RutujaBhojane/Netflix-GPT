@@ -10,6 +10,9 @@
 - Form Validation
 - useRef Hook
 - Firebase Configuration
+- Deployed App to Production using Firebase
+- Create SignUp User Account
+
 
 
 ...
@@ -30,3 +33,11 @@
 - NetflixGPT 
     - Search Bar
     - Movie Suggestions
+
+
+# Firebase Commands to deploy App
+
+- Install firebase CLI - npm install -g firebase-tools
+- Firebase Login - firebase login
+- Initialize Firebase - firebase init 
+- Deploy Command - npm run build then firebase deploy
