@@ -21,7 +21,7 @@ const Header = () => {
   };
 
   useEffect(() => {
-    onAuthStateChanged(auth, (user) => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
       //As soon as Header loads onAuthStateChanged listener will be there and it will check for auth everytime.
       // Whenever useEffect will be called / onAuthStateChanged will be called it will navigate to particular route.
       if (user) {
@@ -33,6 +33,8 @@ const Header = () => {
         navigate("/");
       }
     });
+
+    return () => unsubscribe(); //unsubscribe to onAuthStateChanged whenever Header component unmounts.
   }, []);
   return (
     <div className="absolute w-screen px-8 py-2 bg bg-gradient-to-b from-black z-10 flex justify-between">
