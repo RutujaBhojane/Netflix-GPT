@@ -12,6 +12,10 @@
 - Firebase Configuration
 - Deployed App to Production using Firebase
 - Create SignUp User Account
+- Implement Sign In user API
+- Create Redux Store with userSlice
+- Implemented Sign Out
+- Update Profile API
 
 
 
