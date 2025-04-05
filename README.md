@@ -18,6 +18,8 @@
 - Update Profile API
 - BugFix: if the user is not logged in Redirect /browse to Login Page and vice-versa
 - BugFix: Unsubscribed to the onAuthStateChanged callback
+- Add hard coded values to the constants.js file
+- 
 
 
 

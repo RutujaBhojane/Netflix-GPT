@@ -9,6 +9,7 @@ import {
 import { auth } from "../utils/firebase";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
+import { USER_ICON } from "../utils/constants";
 
 const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(true);
@@ -42,12 +43,18 @@ const Login = () => {
           const user = userCredential.user;
           updateProfile(user, {
             displayName: name.current.value,
+            photoURL: USER_ICON,
           })
             .then(() => {
               // Profile updated!
-              const { uid, email, displayName } = auth.currentUser; //updated value of the user
+              const { uid, email, displayName, photoURL } = auth.currentUser; //updated value of the user
               dispatch(
-                addUser({ uid: uid, email: email, displayName: displayName })
+                addUser({
+                  uid: uid,
+                  email: email,
+                  displayName: displayName,
+                  photoURL: photoURL,
+                })
               ); //dispatching action addUser to add User to the store
             })
             .catch((error) => {
@@ -87,18 +94,11 @@ const Login = () => {
   return (
     <div>
       <Header />
-      <div>
-        <img
-          className="absolute w-full h-screen object-cover"
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/fc164b4b-f085-44ee-bb7f-ec7df8539eff/d23a1608-7d90-4da1-93d6-bae2fe60a69b/IN-en-20230814-popsignuptwoweeks-perspective_alpha_website_large.jpg"
-          alt="background-img"
-        />
-      </div>
       <div
         className="h-screen bg-cover bg-center flex items-center justify-center"
         style={{
           backgroundImage:
-            "https://assets.nflxext.com/ffe/siteui/vlv3/fc164b4b-f085-44ee-bb7f-ec7df8539eff/d23a1608-7d90-4da1-93d6-bae2fe60a69b/IN-en-20230814-popsignuptwoweeks-perspective_alpha_website_large.jpg",
+            "url(https://assets.nflxext.com/ffe/siteui/vlv3/fc164b4b-f085-44ee-bb7f-ec7df8539eff/d23a1608-7d90-4da1-93d6-bae2fe60a69b/IN-en-20230814-popsignuptwoweeks-perspective_alpha_website_large.jpg)",
         }}
       >
         <form
